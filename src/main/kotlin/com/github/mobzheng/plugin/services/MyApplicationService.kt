@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.mobzheng.plugin.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.mobzheng.plugin.MyBundle
 
 class MyApplicationService {
 
