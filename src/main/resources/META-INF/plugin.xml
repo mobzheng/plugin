@@ -6,14 +6,21 @@
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.mobzheng.plugin.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.mobzheng.plugin.services.MyProjectService"/>
+        <programRunner implementation="com.github.mobzheng.plugin.runner.MainRunner"/>
     </extensions>
+
 
     <applicationListeners>
         <listener class="com.github.mobzheng.plugin.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
+        <listener class="com.github.mobzheng.plugin.listeners.ToolListener"
+                  topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener"/>
+        <listener class="com.github.mobzheng.plugin.listeners.Runlistener"
+                  topic="com.intellij.execution.RunManagerListener"/>
     </applicationListeners>
 </idea-plugin>
